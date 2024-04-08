@@ -1,3 +1,10 @@
 grpc:
   server:
-    port: 9090
+    port: 9091
+  client:
+    test:
+      address: 'static://127.0.0.1:9090'
+      negotiationtype: plaintext
+server:
+  port: 8081
+
