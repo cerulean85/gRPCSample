@@ -2,23 +2,39 @@ package net.kkennib.grpc;
 
 import io.grpc.StatusRuntimeException;
 import net.devh.boot.grpc.client.inject.GrpcClient;
-import org.chb.examples.lib.HelloReply;
-import org.chb.examples.lib.HelloRequest;
-import org.chb.examples.lib.SimpleGrpc;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import java.util.Objects;
 
 @Service
 public class GrpcClientService {
 
-    @GrpcClient("test")
-    private SimpleGrpc.SimpleBlockingStub simpleStub;
+    @GrpcClient("bee4")
+    private Bee4ServiceGrpc.Bee4ServiceBlockingStub bee4Stub;
 
-    public String sendMessage(final String name) {
+    @Value("${run.type}")
+    private String runType;
+
+    public void test()
+    {
+        System.out.println(runType);
+        System.out.println(runType);
+        System.out.println(runType);
+        System.out.println(runType);
+        System.out.println(runType);
+    }
+
+    public boolean areYouHealthy() {
+        if (Objects.equals(runType, "active-active"))
+            return true;
+
         try{
-            HelloReply response = this.simpleStub.sayHello(HelloRequest.newBuilder().setName(name).build());
-            return response.getMessage();
+            NodeCondition response = this.bee4Stub.areYouHealthy(EmptyParam.newBuilder().build());
+            boolean isHealthy = response.getHealthy();
+            return isHealthy;
         } catch (StatusRuntimeException e) {
-            return "FAILED with " + e.getStatus().getCode().name();
+            return false;
         }
     }
 }

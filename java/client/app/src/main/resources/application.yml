@@ -1,7 +1,13 @@
-server:
-  port: 8081
+run:
+  type: active-standby
+
 grpc:
+  server:
+    port: 9092
   client:
-    test:
+    bee4:
       address: 'static://127.0.0.1:9090'
       negotiationtype: plaintext
+server:
+  port: 8082
+

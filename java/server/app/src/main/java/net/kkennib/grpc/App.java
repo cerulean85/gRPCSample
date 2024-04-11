@@ -3,35 +3,18 @@
  */
 package net.kkennib.grpc;
 
-import io.grpc.StatusRuntimeException;
-import net.devh.boot.grpc.client.inject.GrpcClient;
-import org.chb.examples.lib.HelloReply;
-import org.chb.examples.lib.HelloRequest;
-import org.chb.examples.lib.SimpleGrpc;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.stereotype.Service;
+
 
 @SpringBootApplication
 
 public class App {
-
-    @GrpcClient("test")
-    private static SimpleGrpc.SimpleBlockingStub simpleStub;
-
-
-    private static GrpcClientService grpc;
     public static void main(String[] args) {
-
-//        String result = grpc.sendMessage("하하호호");
-
-
         ApplicationContext context = SpringApplication.run(App.class, args);
-        GrpcClientService myService = context.getBean(GrpcClientService.class);
-        String mesesage = myService.sendMessage("하하하호호");
-        System.out.println(mesesage);
+        GrpcClientService grpcClientService = context.getBean(GrpcClientService.class);
+        grpcClientService.areYouHealthy();
     }
 }
