@@ -1,0 +1,7 @@
+server:
+  manager:
+    addr: "localhost"
+    port: 8084
+  worker:
+    addr: "localhost"
+    port: 8085

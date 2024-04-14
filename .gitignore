@@ -4,6 +4,10 @@
 # Ignore Gradle build output directory
 build
 
-server/.idea
-java/client/.idea
-java/server/.idea
+java/interface/.idea/
+java/client/.idea/
+java/server/.idea/
+
+python/__pycache__/
+python/.idea/
+python/venv/

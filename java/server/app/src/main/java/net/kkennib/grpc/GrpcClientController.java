@@ -17,3 +17,4 @@ public class GrpcClientController {
         return grpcClientService.areYouHealthy();
     }
 }
+
