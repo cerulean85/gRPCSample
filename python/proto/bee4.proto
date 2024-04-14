@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "net.kkennib.grpc";
+option java_outer_classname = "Bee4Proto";
+
+message NodeCondition {
+  bool healthy = 1;
+  bool idle = 2;
+}
+
+message Feed {
+  int32 no = 1;
+  string botType = 2;
+  string script = 3;
+  string botAnswer = 4;
+}
+
+message EmptyParam {
+}
+
+service Bee4Service{
+  rpc AreYouHealthy (EmptyParam) returns (NodeCondition);
+  rpc AreYouIdle(EmptyParam) returns (NodeCondition);
+  rpc Deliver(Feed) returns (Feed);
+}
