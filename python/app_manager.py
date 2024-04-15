@@ -1,14 +1,14 @@
-import sys
-sys.path.append(r'E:\gRPCSample\python\proto')
+import os, sys, config
+current_path = os.path.dirname(os.path.realpath(__file__)).replace("\\", "/")
+conf = config.get_config(path=current_path)
 
-import os, grpc
+sys.path.append(current_path + '/proto')
+
+import grpc
 import network as net
-import config as cfg
+
 from proto import bee4_pb2
 from proto import bee4_pb2_grpc
-
-current_path = os.path.dirname(os.path.realpath(__file__)).replace("\\", "/")
-conf = cfg.get_config(path=current_path)
 
 def get_worker_stub():
     worker_conf = conf["server"]["worker"]
@@ -48,7 +48,7 @@ def deliver():
     return result
 
 if __name__ == '__main__':
-    deliver()
+    # deliver()
 
     manager_conf = conf["server"]["manager"]
     worker_addr = manager_conf["addr"]

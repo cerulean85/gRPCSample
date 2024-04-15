@@ -5,3 +5,6 @@ server:
   worker:
     addr: "localhost"
     port: 8085
+
+project:
+  root: E:\gRPCSample
