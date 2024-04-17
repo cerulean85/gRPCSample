@@ -26,8 +26,8 @@ storage:
       remote:
         region: ap-northeast-2
         key:
-          access: AKIAXOIVJXCVCENCNN4H
-          secret: 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  
+          access: ====================
+          secret: ====================
 
 project:
   root: E:\gRPCSample
