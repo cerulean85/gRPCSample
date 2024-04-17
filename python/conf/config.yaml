@@ -16,18 +16,18 @@ storage:
         password: 3968
         dbname: postgres
       rds:
-        host: kkennib.cleumsg4u4w1.ap-northeast-2.rds.amazonaws.com
-        port: 5432
-        username: postgres
-        password: "!Qwer3968"
-        dbname: postgres
+        host: =====
+        port: =====
+        username: =====
+        password: =====
+        dbname: =====
   nosql:
     dynamo:
       remote:
-        region: ap-northeast-2
+        region: =====
         key:
-          access: ====================
-          secret: ====================
+          access: =====
+          secret: =====
 
 project:
   root: E:\gRPCSample
