@@ -1,7 +1,6 @@
 import sys
 sys.path.append(r'E:\gRPCSample\python\proto')
 
-
 from proto.Bee4Service import Bee4Service
 from proto import bee4_pb2_grpc
 from concurrent import futures

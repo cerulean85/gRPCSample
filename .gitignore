@@ -11,3 +11,6 @@ java/server/.idea/
 python/__pycache__/
 python/.idea/
 python/venv/
+python/proto/__pycache__/
+python/storage/__pycache__/
+python/conf/__pycache__/

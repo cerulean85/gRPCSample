@@ -1,0 +1,33 @@
+server:
+  manager:
+    addr: "localhost"
+    port: 8084
+  worker:
+    addr: "localhost"
+    port: 8085
+
+storage:
+  rdb:
+    app:
+      local:
+        host: localhost
+        port: 5432
+        username: postgres
+        password: 3968
+        dbname: postgres
+      rds:
+        host: kkennib.cleumsg4u4w1.ap-northeast-2.rds.amazonaws.com
+        port: 5432
+        username: postgres
+        password: "!Qwer3968"
+        dbname: postgres
+  nosql:
+    dynamo:
+      remote:
+        region: ap-northeast-2
+        key:
+          access: AKIAXOIVJXCVCENCNN4H
+          secret: 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  
+
+project:
+  root: E:\gRPCSample
